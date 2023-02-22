@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+
+  </body>
+  <script>
+// function doWhenDataReceived (value){
+//   let valueJson= value.json()  // 4
+//   returnNxtEle.next(valueJson) // 5
+// }
+// function *createFlow(){
+//     const valueJson = yield fetch('https://meowfacts.herokuapp.com/') //1st part
+//     valueJson.then(data=>console.log(data.data[0])) // 2rd part
+// }
+// const returnNxtEle = createFlow()   // 1
+// const futureData = returnNxtEle.next()  // 2
+// futureData.value.then(doWhenDataReceived) // 3
+
+
+async function createFlow(){
+    const data = await fetch ('https://meowfacts.herokuapp.com/')
+    console.log(data)
+    console.log(data.json().then(a=>console.log(a.data[0])))
+}
+createFlow()
+
+  </script>
+</html>
